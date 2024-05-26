@@ -11,6 +11,7 @@ import java.util.Map;
 
 
 @RequestMapping(path = "/bill")
+@CrossOrigin
 public interface BillRest {
 
     @PostMapping(path = "/generateReport")

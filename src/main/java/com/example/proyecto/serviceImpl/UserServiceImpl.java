@@ -134,7 +134,7 @@ public class UserServiceImpl implements UserService {
               Optional<User> optional = userDao.findById(Integer.parseInt(requestMap.get("id")));
               if (!optional.isEmpty()){
                   userDao.updateStatus(requestMap.get("status"), Integer.parseInt(requestMap.get("id")));
-                  sendMailToAllAdmin(requestMap.get("status"), optional.get().getEmail(), userDao.getAllAdmin());
+                  //sendMailToAllAdmin(requestMap.get("status"), optional.get().getEmail(), userDao.getAllAdmin());
                   return CafeUtils.getResponseEntity("Estado actualizado", HttpStatus.OK);
               }
               else {

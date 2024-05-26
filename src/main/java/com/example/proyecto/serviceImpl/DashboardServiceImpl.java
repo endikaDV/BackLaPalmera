@@ -29,7 +29,7 @@ public class DashboardServiceImpl implements DashboardService {
     public ResponseEntity<Map<String, Object>> getCount() {
         Map<String, Object> map = new HashMap<>();
         map.put("category", categoryDao.count());
-        map.put("prodduct", productDao.count());
+        map.put("product", productDao.count());
         map.put("bill",billDao.count());
         return new ResponseEntity<>(map, HttpStatus.OK);
     }

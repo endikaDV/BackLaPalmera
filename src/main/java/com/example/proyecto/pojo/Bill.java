@@ -17,7 +17,7 @@ import java.io.Serializable;
 @Entity
 @DynamicUpdate
 @DynamicInsert
-@Table(name = "category")
+@Table(name = "bill")
 public class Bill implements Serializable {
     private static final long serialVersionUID = 1L;
 

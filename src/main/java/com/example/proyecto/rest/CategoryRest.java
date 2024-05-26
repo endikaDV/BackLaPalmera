@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 @RequestMapping(path = "/category")
+@CrossOrigin
 public interface CategoryRest {
 
     @PostMapping(path = "/add")
