@@ -50,7 +50,7 @@ public class BillServiceImpl implements BillService {
                     requestMap.put("uuid", fileName);
                     insertBill(requestMap);
                 }
-                String data = "Name: "+requestMap.get("name") + "\n"+"Numero de Contacto: "+requestMap.get("contactNumber")+
+                String data = "Nombre: "+requestMap.get("name") + "\n"+"Numero de Contacto: "+requestMap.get("contactNumber")+
                         "\n"+"Email: "+requestMap.get("email")+"\n"+"Metodo de Pago: "+ requestMap.get("paymentMethod");
 
                 Document document = new Document();
@@ -59,7 +59,7 @@ public class BillServiceImpl implements BillService {
                 document.open();
                 setRectangleInPdf(document);
 
-                Paragraph chunk = new Paragraph("Sistema de Gestion", getFont("Header"));
+                Paragraph chunk = new Paragraph("LA PALMERA", getFont("Header"));
                 chunk.setAlignment(Element.ALIGN_CENTER);
                 document.add(chunk);
 
@@ -76,7 +76,7 @@ public class BillServiceImpl implements BillService {
                 }
                 document.add(table);
 
-                Paragraph footer = new Paragraph("Total :"+requestMap.get("totalAmount")+"\n"
+                Paragraph footer = new Paragraph("Total :"+requestMap.get("totalAmount")+("€")+"\n"
                 +"Gracias por la visita, vuelva cuando quiera!",getFont("Data"));
                 document.add(footer);
                 document.close();
@@ -132,7 +132,7 @@ public class BillServiceImpl implements BillService {
                 billDao.deleteById(id);
                 return CafeUtils.getResponseEntity("Factura borrada",HttpStatus.OK);
             }
-            return CafeUtils.getResponseEntity("La factura no  existe", HttpStatus.OK);
+            return CafeUtils.getResponseEntity("La factura no existe", HttpStatus.OK);
         }catch (Exception ex){
             ex.printStackTrace();
         }
